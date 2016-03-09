@@ -12,7 +12,7 @@ import threading
 def main():
     console = threading.Thread(target=ConsoleInput())
     console.start()
-    timer = Diag.NetworkDiagnostic(30)
+    timer = Diag.NetworkDiagnostic(1)
     timer.initDiag()
 
 #TODO:

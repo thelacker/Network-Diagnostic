@@ -33,7 +33,7 @@ def systemCommandCheckIP(Command):
 def checkReachability(ip, ops):
     host = ip
     noofpackets = 2
-    timeout = 5000 #in milliseconds
+    timeout = 5 #in milliseconds
     command = 'ping {0} {1} -w {2} {3}'.format(ops,noofpackets,timeout,host)
     Stdout,Stderr = systemCommandCheckIP(command)
     if Stdout:
@@ -60,19 +60,21 @@ def fromDataBase (ipDataBase, opSys):
 #Функция вызывается в отдельном потоке и,
 # после некоторого ожидания, смотрит доступность снова
 def recheckIfUnreachable(host, ops):
-    time.sleep(180)
-    print '..............'+'Second try'+'..............'
+    time.sleep(1)
+    str = '..............'+'Second try'+'..............\n'
     noofpackets = 2
     timeout = 5000 #in milliseconds
     command = 'ping {0} {1} -w {2} {3}'.format(ops,noofpackets,timeout,host)
     Stdout,Stderr = systemCommandCheckIP(command)
     if Stdout:
-        print("Host [{}] is now reachable.".format(host))
-        print '......................................'
+        str += ("Host [{}] is now reachable.\n".format(host))
+        str += '......................................\n'
         LogFile.newLog(host, "Reachable")
+        print str
     else:
-        print("Host [{}] is unreachable.".format(host))
+        str += ("Host [{}] is unreachable.\n".format(host))
         LogFile.newLog(host, "Unreachable")
         Report.sendEmail("ip:" + host + " is still unreachable")
-        print 'Report sent!'
-        print '......................................'
+        str += 'Report sent!\n'
+        str += '......................................\n'
+        print str
