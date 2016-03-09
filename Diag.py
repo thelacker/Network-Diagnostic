@@ -10,7 +10,7 @@ class NetworkDiagnostic: #timer for checking
     #Конструктор класса
     #Устанавливает время таймера перезапуска и определяет операционную систему
     def __init__(self, minutes):
-        self.minutes = minutes*60
+        self.minutes = minutes
         if os.name == "nt": #Command for windows
             self.ops = "-n"
         else:
