@@ -18,7 +18,10 @@ class NetworkDiagnostic: #timer for checking
 
     #Функция запуска проверки ip из базы данных
     def checkByIP(self):
-        CheckByIP.fromDataBase(os.getcwd()+"\\"+"ipDataBase"+".txt", self.ops)
+        if self.ops == "nt": #Command for windows
+            CheckByIP.fromDataBase(os.getcwd()+"\\"+"ipDataBase"+".txt", self.ops)
+        else:
+            CheckByIP.fromDataBase(os.getcwd()+"//"+"ipDataBase"+".txt", self.ops)
 
     #Запуск таймера
     #Обработка ошибок, вывод их на экран и запись в лог
@@ -29,10 +32,10 @@ class NetworkDiagnostic: #timer for checking
             print '--------------------------------------'
             threading.Timer(self.minutes, self.launchTimer).start()
         except Exception as e:
-            print "\n\n"+"!!! !!! !!!"+e+"!!! !!! !!!"+"\n\n"
+            print "\n\n"+"!!! !!! !!!"+str(e)+"!!! !!! !!!"+"\n\n"
             self.log_file_path = os.getcwd()+"\\"+str(datetime.date.today())+".txt"
             self.log_file = open(self.log_file_path, "a+")
-            self.log_file.write("\n\n"+"!!! !!! !!!"+str(e)+"!!! !!! !!!"+"\n\n")
+            self.log_file.write("\n\n"+"!!! !!! !!!"+ str(e) +"!!! !!! !!!"+"\n\n")
             self.log_file.close()
             self.launchTimer()
 
