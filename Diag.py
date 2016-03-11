@@ -29,7 +29,6 @@ class NetworkDiagnostic: #timer for checking
         try:
             print '-----------------'+str(datetime.datetime.now().hour) + ":" + str(datetime.datetime.now().minute)+'----------------'
             self.checkByIP()
-            print '--------------------------------------'
             threading.Timer(self.minutes, self.launchTimer).start()
         except Exception as e:
             print "\n\n"+"!!! !!! !!!"+str(e)+"!!! !!! !!!"+"\n\n"
@@ -42,7 +41,5 @@ class NetworkDiagnostic: #timer for checking
 
     #Вывод первоначальной информации и запуск функции такймера
     def initDiag(self):
-        print '______________________________________'
-        print '======================================'
-        print 'Diagnostic started...\nPeriod - '+str(self.minutes)+' minutes...'
+        print 'Diagnostic started\nPeriod - '+str(self.minutes)+' minutes'
         self.launchTimer()

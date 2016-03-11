@@ -1,6 +1,7 @@
 import Serialisation
 from telegram import Updater
 import logging
+import Diagnostic
 
 # Enable logging
 logging.basicConfig(
@@ -13,7 +14,7 @@ logger = logging.getLogger(__name__)
 # Define a few command handlers. These usually take the two arguments bot and
 # update. Error handlers also receive the raised TelegramError object in error.
 def start(bot, update):
-    bot.sendMessage(update.message.chat_id, text='Hi!')
+    bot.sendMessage(update.message.chat_id, text='Not a command')
 
 
 def help(bot, update):
@@ -59,7 +60,9 @@ def main():
     dp.addTelegramMessageHandler(echo)
 
     # log all errors
-    dp.addErrorHandler(error)
+    # dp.addErrorHandler(error)
+
+    Diagnostic.start()
 
     # Start the Bot
     updater.start_polling()
