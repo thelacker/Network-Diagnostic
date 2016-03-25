@@ -28,8 +28,7 @@ def get_constructions():
 # Define a few command handlers. These usually take the two arguments bot and
 # update. Error handlers also receive the raised TelegramError object in error.
 def start(bot, update):
-    constructions["bot"] = bot
-    constructions["update"].append(update.message.chat_id)
+    constructions.update({"bot": bot, "update": update})
     bot.sendMessage(update.message.chat_id, text='Hello!')
 
 

@@ -53,13 +53,13 @@ def checkReachability(ip, ops):
             ip_dict_write(ip, [0, 0])
         if status[0] == 3:
             ip_dict_write(ip, [1, 0])
-            recheckIfUnreachable(ip, ops)
     else:
         print("Host [{}]   \tis unreachable!".format(host))
         LogFile.newLog(host, "Unreachable")
         recheck = threading.Thread(target=recheckIfUnreachable, args = (host, ops))
         if status[0] == 0:
-            ip_dict_write(ip, [2,0])
+            ip_dict_write(ip, [0, 0])
+            recheck.start()
         if status[0] == 1:
             ip_dict_write(ip, [3, 0])
         if status[0] == 2:
@@ -86,7 +86,7 @@ def fromDataBase (ipDataBase, opSys):
 #Функция вызывается в отдельном потоке и,
 # после некоторого ожидания, смотрит доступность снова
 def recheckIfUnreachable(host, ops):
-    time.sleep(100)
+    time.sleep(5)
     status = ip_dict_read(host)
     str = '..............'+'Second try'+'..............\n'
     noofpackets = 2
