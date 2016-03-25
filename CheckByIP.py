@@ -6,7 +6,7 @@ import threading
 import time
 from Serialisation import *
 import pickle
-
+from Telegram import get_constructions
 
 #Функция вызова системной функции ping
 #Обработка ошибок
@@ -107,6 +107,7 @@ def recheckIfUnreachable(host, ops):
         str += 'Report sent!\n'
         str += '......................................\n'
         ip_dict_write(host, [3, 0])
-        with open('jobtodone.txt', 'wb') as f:
-            pickle.dump([host, "offline"], f)
+        constructions = get_constructions()
+        for chat_id in constructions["update"]:
+            constructions["bot"].sendMessage(chat_id, text='Hello!')
         print str

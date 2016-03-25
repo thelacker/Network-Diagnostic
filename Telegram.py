@@ -7,15 +7,29 @@ import pickle
 
 # Enable logging
 logging.basicConfig(
-        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-        level=logging.INFO)
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    level=logging.INFO)
 
 logger = logging.getLogger(__name__)
+
+constructions = {"10.10.4.24": "Avtozavodskaya", "10.10.4.7": "Bryansky Post", "10.10.4.11": "Butyrsky",
+                 "10.10.4.23": "Domodedovo", "10.10.4.9": "Entuziastov", "10.10.4.14": "Kashirskoe",
+                 "10.10.4.6": "Kutuzovsky", "10.10.4.20": "Mira", "10.10.4.25": "Rusakovskaya",
+                 "10.10.4.10": "Sokolniki", "10.10.4.5": "Trofimova", "10.10.4.21": "Varshavskoe obl",
+                 "10.10.4.15": "Volgogradsky", "10.10.4.12": "Varshavskoe", "10.10.4.8": "Yaroslavskoe",
+                 "10.10.4.19": "Zvenigorodskoe", "10.10.4.17": "Volokolamka", "10.10.4.13": "Leningradsky",
+                 "bot": None, "update": list()}
+
+
+def get_constructions():
+    return constructions
 
 
 # Define a few command handlers. These usually take the two arguments bot and
 # update. Error handlers also receive the raised TelegramError object in error.
 def start(bot, update):
+    constructions["bot"] = bot
+    constructions["update"].append(update.message.chat_id)
     bot.sendMessage(update.message.chat_id, text='Hello!')
 
 
@@ -28,13 +42,13 @@ def status(bot, update):
     text = "Status:\n"
     for ip in ip_dict.items():
         if ip[1][0] == 0:
-            text += "{0} is online\n".format(ip[0])
+            text += "{0} is online\n".format(constructions[str(ip[0])])
         if ip[1][0] == 1:
-            text += "{0} is pre-online\n".format(ip[0])
+            text += "{0} is pre-online\n".format(constructions[str(ip[0])])
         if ip[1][0] == 2:
-            text += "{0} is pre-offline\n".format(ip[0])
+            text += "{0} is pre-offline\n".format(constructions[str(ip[0])])
         if ip[1][0] == 3:
-            text += "{0} is offline\n".format(ip[0])
+            text += "{0} is offline\n".format(constructions[str(ip[0])])
     bot.sendMessage(update.message.chat_id, text=text)
 
 
@@ -48,8 +62,6 @@ def check_status(bot, update):
         check_status(bot, update)
     except:
         check_status(bot, update)
-
-
 
 
 def echo(bot, update):
@@ -88,6 +100,7 @@ def main():
     # SIGTERM or SIGABRT. This should be used most of the time, since
     # start_polling() is non-blocking and will stop the bot gracefully.
     updater.idle()
+
 
 if __name__ == '__main__':
     main()
