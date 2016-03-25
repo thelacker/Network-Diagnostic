@@ -64,11 +64,11 @@ def checkReachability(ip, ops):
         if status[0] == 1:
             ip_dict_write(ip, [3, 0])
         if status[0] == 2:
-            if status[1]>3:
+            if int(status[1])>3:
                 ip_dict_write(ip, [3, 0])
                 recheck.start()
             else:
-                ip_dict_write(ip, [2, status[1]+1])
+                ip_dict_write(ip, [2, int(status[1])+1])
         if status[0] == 3:
             ip_dict_write(ip, [3, 0])
 
