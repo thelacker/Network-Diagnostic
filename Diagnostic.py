@@ -10,7 +10,7 @@ import threading
 def start():
     console = threading.Thread(target=ConsoleInput())
     console.start()
-    timer = Diag.NetworkDiagnostic(100)
+    timer = Diag.NetworkDiagnostic(10)
     timer.initDiag()
 
 #TODO:

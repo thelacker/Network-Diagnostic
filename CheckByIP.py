@@ -45,7 +45,7 @@ def checkReachability(ip, ops):
         if status[0] == 0:
             ip_dict_write(ip, [0, 0])
         if status[0] == 1:
-            if status[1]>3:
+            if status[1]>2:
                 recheck = threading.Thread(target=recheckIfUnreachable, args = (host, ops))
                 ip_dict_write(ip, [0, 0])
                 recheck.start()
@@ -64,7 +64,7 @@ def checkReachability(ip, ops):
         if int(status[1]) == 1:
             ip_dict_write(ip, [3, 0])
         if status[0] == 2:
-            if int(status[1])>3:
+            if int(status[1])>2:
                 ip_dict_write(ip, [3, 0])
                 recheck.start()
             else:
