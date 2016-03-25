@@ -5,6 +5,7 @@ import Report
 import threading
 import time
 from Serialisation import *
+import pickle
 
 
 #Функция вызова системной функции ping
@@ -41,16 +42,35 @@ def checkReachability(ip, ops):
     if Stdout:
         print("Host [{}]   \tis reachable.".format(host))
         LogFile.newLog(host, "Reachable")
-        ip_dict_write(ip, 0)
+        if status[0] == 0:
+            ip_dict_write(ip, [0, 0])
+        if status[0] == 1:
+            if status[1]>3:
+                ip_dict_write(ip, [0, 0])
+            else:
+                ip_dict_write(ip, [1, status[1]+1])
+        if status[0] == 2:
+            ip_dict_write(ip, [0, 0])
+        if status[0] == 3:
+            ip_dict_write(ip, [1, 0])
+            with open('jobtodone.txt', 'wb') as f:
+                pickle.dump([host, "online"], f)
     else:
         print("Host [{}]   \tis unreachable!".format(host))
         LogFile.newLog(host, "Unreachable")
         recheck = threading.Thread(target=recheckIfUnreachable, args = (host, ops))
-        if status == 0:
-            ip_dict_write(ip, 1)
-        if status == 1:
-            ip_dict_write(ip, 2)
-            recheck.start()
+        if status[0] == 0:
+            ip_dict_write(ip, [2,0])
+        if status[0] == 1:
+            ip_dict_write(ip, [3, 0])
+        if status[0] == 2:
+            if status[1]>3:
+                ip_dict_write(ip, [3, 0])
+                recheck.start()
+            else:
+                ip_dict_write(ip, [2, status[1]+1])
+        if status[0] == 3:
+            ip_dict_write(ip, [3, 0])
 
 
 #Функцию чтения ip из базы данных
@@ -67,7 +87,8 @@ def fromDataBase (ipDataBase, opSys):
 #Функция вызывается в отдельном потоке и,
 # после некоторого ожидания, смотрит доступность снова
 def recheckIfUnreachable(host, ops):
-    time.sleep(1)
+    time.sleep(100)
+    status = ip_dict_read(host)
     str = '..............'+'Second try'+'..............\n'
     noofpackets = 2
     timeout = 500 #in milliseconds
@@ -77,7 +98,7 @@ def recheckIfUnreachable(host, ops):
         str += ("Host [{}] is now reachable.\n".format(host))
         str += '......................................\n'
         LogFile.newLog(host, "Reachable")
-        ip_dict_write(host, 1)
+        ip_dict_write(host, [1, 0])
         print str
     else:
         str += ("Host [{}] is unreachable.\n".format(host))
@@ -85,5 +106,7 @@ def recheckIfUnreachable(host, ops):
         Report.sendEmail("ip:" + host + " is still unreachable")
         str += 'Report sent!\n'
         str += '......................................\n'
-        ip_dict_write(host, 3)
+        ip_dict_write(host, [3, 0])
+        with open('jobtodone.txt', 'wb') as f:
+            pickle.dump([host, "offline"], f)
         print str
