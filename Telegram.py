@@ -17,7 +17,7 @@ constructions = {"10.10.4.24": "Avtozavodskaya", "10.10.4.7": "Bryansky Post", "
                  "10.10.4.10": "Sokolniki", "10.10.4.5": "Trofimova", "10.10.4.21": "Varshavskoe obl",
                  "10.10.4.15": "Volgogradsky", "10.10.4.12": "Varshavskoe", "10.10.4.8": "Yaroslavskoe",
                  "10.10.4.19": "Zvenigorodskoe", "10.10.4.17": "Volokolamka", "10.10.4.13": "Leningradsky","10.10.4.4": "Test",
-                 "bot": None, "update": list()}
+                 "10.10.5.230": "sftp", "bot": None, "update": list()}
 
 
 def get_constructions():
