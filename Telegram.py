@@ -17,7 +17,7 @@ constructions = {"10.10.4.24": "Avtozavodskaya", "10.10.4.7": "Bryansky Post", "
                  "10.10.4.6": "Kutuzovsky", "10.10.4.20": "Mira", "10.10.4.25": "Rusakovskaya",
                  "10.10.4.10": "Sokolniki", "10.10.4.5": "Trofimova", "10.10.4.21": "Varshavskoe obl",
                  "10.10.4.15": "Volgogradsky", "10.10.4.12": "Varshavskoe", "10.10.4.8": "Yaroslavskoe",
-                 "10.10.4.19": "Zvenigorodskoe", "10.10.4.17": "Volokolamka", "10.10.4.13": "Leningradsky",
+                 "10.10.4.19": "Zvenigorodskoe", "10.10.4.17": "Volokolamka", "10.10.4.13": "Leningradsky","10.10.4.4": "Test",
                  "bot": None, "update": list()}
 
 
@@ -52,18 +52,6 @@ def status(bot, update):
     bot.sendMessage(update.message.chat_id, text=text)
 
 
-def check_status(bot, update):
-    sleep(1)
-    try:
-        statfile = open("jobtodone", "rb")
-        something = pickle.load(statfile)
-        bot.sendMessage(update.message.chat_id, text="{0} is {1}".format(something[0], something[1]))
-        statfile = open("jobtodone.txt", "w")
-        check_status(bot, update)
-    except:
-        check_status(bot, update)
-
-
 def echo(bot, update):
     bot.sendMessage(update.message.chat_id, text="Not a command")
 
@@ -83,7 +71,6 @@ def main():
     dp.addTelegramCommandHandler("start", start)
     dp.addTelegramCommandHandler("help", help)
     dp.addTelegramCommandHandler("status", status)
-    dp.addTelegramCommandHandler("startcheck", check_status)
 
     # on noncommand i.e message - echo the message on Telegram
     dp.addTelegramMessageHandler(echo)

@@ -53,8 +53,7 @@ def checkReachability(ip, ops):
             ip_dict_write(ip, [0, 0])
         if status[0] == 3:
             ip_dict_write(ip, [1, 0])
-            with open('jobtodone.txt', 'wb') as f:
-                pickle.dump([host, "online"], f)
+            recheckIfUnreachable(ip, ops)
     else:
         print("Host [{}]   \tis unreachable!".format(host))
         LogFile.newLog(host, "Unreachable")
@@ -109,5 +108,5 @@ def recheckIfUnreachable(host, ops):
         ip_dict_write(host, [3, 0])
         constructions = get_constructions()
         for chat_id in constructions["update"]:
-            constructions["bot"].sendMessage(chat_id, text='Hello!')
+            constructions["bot"].sendMessage(chat_id, text='{0} is offline'.format(constructions[str(host)]))
         print str
