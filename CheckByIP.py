@@ -58,7 +58,7 @@ def checkReachability(ip, ops):
         LogFile.newLog(host, "Unreachable")
         recheck = threading.Thread(target=recheckIfUnreachable, args = (host, ops))
         if status[0] == 0:
-            ip_dict_write(ip, [0, 0])
+            ip_dict_write(ip, [2, 0])
             recheck.start()
         if status[0] == 1:
             ip_dict_write(ip, [3, 0])

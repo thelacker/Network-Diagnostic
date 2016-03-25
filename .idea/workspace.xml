@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d52e2cde-54ae-4b18-9ae9-f1d2bae8c03f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CheckByIP.py" afterPath="$PROJECT_DIR$/CheckByIP.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Diag.py" afterPath="$PROJECT_DIR$/Diag.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Telegram.py" afterPath="$PROJECT_DIR$/Telegram.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ip_dict.txt" afterPath="$PROJECT_DIR$/ip_dict.txt" />
     </list>
     <ignored path="pinger.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CheckByIP.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CheckByIP.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CheckByIP.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="71" column="37" selection-start-line="71" selection-start-column="37" selection-end-line="71" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.4722222">
+              <caret line="60" column="32" selection-start-line="60" selection-start-column="32" selection-end-line="60" selection-end-column="32" />
               <folding>
                 <element signature="e#24#41#0" expanded="true" />
               </folding>
@@ -122,12 +119,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Telegram.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Telegram.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Telegram.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.031481482">
-              <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-              <folding />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -155,8 +154,8 @@
         <option value="$PROJECT_DIR$/ipDataBase.txt" />
         <option value="$PROJECT_DIR$/Diag.py" />
         <option value="$PROJECT_DIR$/2016-03-25.txt" />
-        <option value="$PROJECT_DIR$/CheckByIP.py" />
         <option value="$PROJECT_DIR$/Telegram.py" />
+        <option value="$PROJECT_DIR$/CheckByIP.py" />
       </list>
     </option>
   </component>
@@ -542,7 +541,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="32" column="58" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="58" />
-          <folding />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -620,7 +621,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -666,7 +669,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -792,21 +797,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CheckByIP.py">
+    <entry file="file://$PROJECT_DIR$/Telegram.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="71" column="37" selection-start-line="71" selection-start-column="37" selection-end-line="71" selection-end-column="37" />
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
-            <element signature="e#24#41#0" expanded="true" />
+            <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Telegram.py">
+    <entry file="file://$PROJECT_DIR$/CheckByIP.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.031481482">
-          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-          <folding />
+        <state vertical-scroll-proportion="0.4722222">
+          <caret line="60" column="32" selection-start-line="60" selection-start-column="32" selection-end-line="60" selection-end-column="32" />
+          <folding>
+            <element signature="e#24#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
