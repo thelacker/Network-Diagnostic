@@ -1,5 +1,5 @@
 import Serialisation
-from telegram import Updater
+from telegram.ext import Updater
 import logging
 import Diagnostic
 import pickle

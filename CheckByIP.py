@@ -58,18 +58,18 @@ def checkReachability(ip, ops):
     else:
         print("Host [{}]   \tis unreachable!".format(host))
         LogFile.newLog(host, "Unreachable")
-        recheck = threading.Thread(target=recheckIfUnreachable, args = (host, ops))
-        if int(status[1]) == 0:
+        if int(status[0]) == 0:
             ip_dict_write(ip, [2, 0])
-        if int(status[1]) == 1:
+        if int(status[0]) == 1:
             ip_dict_write(ip, [3, 0])
         if status[0] == 2:
             if int(status[1])>2:
+                recheck = threading.Thread(target=recheckIfUnreachable, args = (host, ops))
                 ip_dict_write(ip, [3, 0])
                 recheck.start()
             else:
                 ip_dict_write(ip, [2, int(status[1])+1])
-        if int(status[1]) == 3:
+        if int(status[0]) == 3:
             ip_dict_write(ip, [3, 0])
 
 
