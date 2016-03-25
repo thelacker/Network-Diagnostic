@@ -19,7 +19,7 @@ class NetworkDiagnostic: #timer for checking
     #Функция запуска проверки ip из базы данных
     def checkByIP(self):
         if self.ops == "nt": #Command for windows
-            CheckByIP.fromDataBase(os.getcwd()+"\\"+"ipDataBase"+".txt", self.ops)
+            CheckByIP.fromDataBase("ipDataBase"+".txt", self.ops)
         else:
             CheckByIP.fromDataBase(os.getcwd()+"//"+"ipDataBase"+".txt", self.ops)
 

@@ -2,7 +2,6 @@ import Serialisation
 from telegram import Updater
 import logging
 import Diagnostic
-from time import sleep
 import pickle
 
 # Enable logging
@@ -22,16 +21,21 @@ constructions = {"10.10.4.24": "Avtozavodskaya", "10.10.4.7": "Bryansky Post", "
 
 
 def get_constructions():
+    with open('data.pickle', 'rb') as f:
+        constructions = pickle.load(f)
+
     return constructions
 
 
 # Define a few command handlers. These usually take the two arguments bot and
 # update. Error handlers also receive the raised TelegramError object in error.
 def start(bot, update):
-    print bot
-    print update
-    constructions.update({"bot": bot, "update": update})
-    print constructions
+    constructions = get_constructions()
+    newupdate = constructions["update"]
+    newupdate.append(update.message.chat_id)
+    constructions.update({"bot": bot, "update": newupdate})
+    with open('data.pickle', 'wb') as f:
+        pickle.dump(constructions, f)
     bot.sendMessage(update.message.chat_id, text='Hello!')
 
 
@@ -63,6 +67,9 @@ def error(bot, update, error):
 
 
 def main():
+    with open('data.pickle', 'wb') as f:
+        pickle.dump(constructions, f)
+
     # Create the EventHandler and pass it your bot's token.
     updater = Updater("158279031:AAFJxyWbRKs0yyglhvswN6DlPhUxp9fDqtc")
 

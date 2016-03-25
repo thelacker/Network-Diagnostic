@@ -107,6 +107,7 @@ def recheckIfUnreachable(host, ops):
         str += '......................................\n'
         ip_dict_write(host, [3, 0])
         constructions = get_constructions()
+        bot = constructions["bot"]
         for chat_id in constructions["update"]:
-            constructions["bot"].sendMessage(chat_id, text='{0} is offline'.format(constructions[str(host)]))
+            bot.sendMessage(chat_id, text='{0} is offline'.format(constructions[host]))
         print str
