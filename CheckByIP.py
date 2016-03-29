@@ -46,9 +46,7 @@ def checkReachability(ip, ops):
             ip_dict_write(ip, [0, 0])
         if status[0] == 1:
             if status[1]>2:
-                recheck = threading.Thread(target=recheckIfUnreachable, args = (host, ops))
                 ip_dict_write(ip, [0, 0])
-                recheck.start()
             else:
                 ip_dict_write(ip, [1, status[1]+1])
         if status[0] == 2:

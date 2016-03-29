@@ -71,7 +71,7 @@ def main():
         pickle.dump(constructions, f)
 
     # Create the EventHandler and pass it your bot's token.
-    updater = Updater("158279031:AAFJxyWbRKs0yyglhvswN6DlPhUxp9fDqtc")
+    updater = Updater("158279031:AAH4d7IwuWy5H8LNxIWY0dEK2eDs1UkcfQ0")
 
     # Get the dispatcher to register handlers
     dp = updater.dispatcher
