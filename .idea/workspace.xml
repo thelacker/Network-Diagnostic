@@ -91,8 +91,8 @@
       <file leaf-file-name="Telegram.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Telegram.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8703704">
-              <caret line="80" column="36" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.7407407">
+              <caret line="79" column="47" selection-start-line="79" selection-start-column="47" selection-end-line="79" selection-end-column="47" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -513,7 +513,13 @@
       <option name="project" value="LOCAL" />
       <updated>1460109463980</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Improvements">
+      <created>1460110406930</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1460110406930</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -991,8 +997,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Telegram.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8703704">
-          <caret line="80" column="36" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.7407407">
+          <caret line="79" column="47" selection-start-line="79" selection-start-column="47" selection-end-line="79" selection-end-column="47" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
