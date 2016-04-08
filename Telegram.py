@@ -40,7 +40,7 @@ def revoke():
         return []
 
 
-def start_user(bot, update):
+def start(bot, update):
     constructions = get_constructions()
     constructions.update({"bot": bot})
     with open('data.pickle', 'wb') as f:
