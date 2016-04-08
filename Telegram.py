@@ -78,6 +78,7 @@ def status(bot, update):
         if ip[1][0] == 3:
             text_of += "{0} is offline\n".format(constructions[str(ip[0])])
     text += text_pre_on + text_pre_of + text_of
+    text += str(get_constructions())
     bot.sendMessage(update.message.chat_id, text=text)
 
 
