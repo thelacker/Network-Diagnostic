@@ -97,7 +97,6 @@ def recheckIfUnreachable(host, ops):
         str += ("Host [{}] is now reachable.\n".format(host))
         str += '......................................\n'
         LogFile.newLog(host, "Reachable")
-        status = ip_dict_read(ip)
         if status[0] == 1:
             ip_dict_write(host, [0, 0])
         else:
