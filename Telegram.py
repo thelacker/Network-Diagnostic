@@ -48,7 +48,6 @@ def help(bot, update):
 
 def status(bot, update):
     ip_dict = Serialisation.ip_dict_read()
-    ip_dict.sort()
     text = "Status:\n"
     text_pre_of = ''
     text_pre_on = ''
