@@ -32,10 +32,13 @@ def get_constructions():
 
 # Define a few command handlers. These usually take the two arguments bot and
 # update. Error handlers also receive the raised TelegramError object in error.
-def start(bot, update):
+def start_user(bot, update):
     constructions = get_constructions()
     newupdate = constructions["update"]
-    newupdate.append(update.message.chat_id)
+    if update.message.chat_id in newupdate:
+        pass
+    else:
+        newupdate.append(update.message.chat_id)
     constructions.update({"bot": bot, "update": newupdate})
     with open('data.pickle', 'wb') as f:
         pickle.dump(constructions, f)
