@@ -40,6 +40,14 @@ def revoke():
         return []
 
 
+def start_user(bot, update):
+    constructions = get_constructions()
+    constructions.update({"bot": bot})
+    with open('data.pickle', 'wb') as f:
+        pickle.dump(constructions, f)
+    bot.sendMessage(update.message.chat_id, text='Hello!')
+
+
 # Define a few command handlers. These usually take the two arguments bot and
 # update. Error handlers also receive the raised TelegramError object in error.
 def start_user(bot, update):
@@ -75,7 +83,6 @@ def status(bot, update):
         if ip[1][0] == 3:
             text_of += "{0} is offline\n".format(constructions[str(ip[0])])
     text += text_pre_on + text_pre_of + text_of
-    text += str(Serialisation.ip_dict_read("10.10.5.230"))
     bot.sendMessage(update.message.chat_id, text=text)
 
 
@@ -99,6 +106,7 @@ def main():
     dp = updater.dispatcher
 
     # on different commands - answer in Telegram
+    dp.addTelegramCommandHandler("start", start)
     dp.addTelegramCommandHandler("start_user", start_user)
     dp.addTelegramCommandHandler("help", help)
     dp.addTelegramCommandHandler("save", save)
