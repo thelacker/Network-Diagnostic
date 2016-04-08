@@ -48,6 +48,7 @@ def help(bot, update):
 
 def status(bot, update):
     ip_dict = Serialisation.ip_dict_read()
+    ip_dict.sort()
     text = "Status:\n"
     for ip in ip_dict.items():
         if ip[1][0] == 0:

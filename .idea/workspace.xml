@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d52e2cde-54ae-4b18-9ae9-f1d2bae8c03f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Telegram.py" afterPath="$PROJECT_DIR$/Telegram.py" />
     </list>
     <ignored path="pinger.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,10 +56,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ipDataBase.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ipDataBase.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ipDataBase.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33333334">
+            <state vertical-scroll-proportion="0.0">
               <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
               <folding />
             </state>
@@ -97,11 +98,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Telegram.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Telegram.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Telegram.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.5555556">
+              <caret line="51" column="18" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -132,9 +133,9 @@
         <option value="$PROJECT_DIR$/Diagnostic.py" />
         <option value="$PROJECT_DIR$/ip_dict.txt" />
         <option value="$PROJECT_DIR$/CheckByIP.py" />
-        <option value="$PROJECT_DIR$/Telegram.py" />
         <option value="$PROJECT_DIR$/data.pickle" />
         <option value="$PROJECT_DIR$/ipDataBase.txt" />
+        <option value="$PROJECT_DIR$/Telegram.py" />
       </list>
     </option>
   </component>
@@ -438,7 +439,13 @@
       <option name="project" value="LOCAL" />
       <updated>1460104482500</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Improvements">
+      <created>1460104644424</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1460104644424</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -883,21 +890,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Telegram.py">
+    <entry file="file://$PROJECT_DIR$/ipDataBase.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
+          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ipDataBase.txt">
+    <entry file="file://$PROJECT_DIR$/Telegram.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
-          <folding />
+        <state vertical-scroll-proportion="0.5555556">
+          <caret line="51" column="18" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
