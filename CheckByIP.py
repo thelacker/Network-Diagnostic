@@ -46,6 +46,7 @@ def checkReachability(ip, ops):
             ip_dict_write(ip, [0, 0])
         if status[0] == 1:
             if status[1]>2:
+                recheckIfUnreachable(ip, ops)
                 ip_dict_write(ip, [0, 0])
             else:
                 ip_dict_write(ip, [1, status[1]+1])
@@ -96,7 +97,11 @@ def recheckIfUnreachable(host, ops):
         str += ("Host [{}] is now reachable.\n".format(host))
         str += '......................................\n'
         LogFile.newLog(host, "Reachable")
-        ip_dict_write(host, [1, 0])
+        status = ip_dict_read(ip)
+        if status[0] == 1:
+            ip_dict_write(host, [0, 0])
+        else:
+            ip_dict_write(host, [1, 0])
         constructions = get_constructions()
         bot = constructions["bot"]
         for chat_id in constructions["update"]:

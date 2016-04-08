@@ -11,12 +11,15 @@ logging.basicConfig(
 
 logger = logging.getLogger(__name__)
 
-constructions = {"10.10.4.24": "Avtozavodskaya", "10.10.4.7": "Bryansky Post", "10.10.4.11": "Butyrsky",
-                 "10.10.4.23": "Domodedovo", "10.10.4.9": "Entuziastov", "10.10.4.14": "Kashirskoe",
-                 "10.10.4.6": "Kutuzovsky", "10.10.4.20": "Mira", "10.10.4.25": "Rusakovskaya",
-                 "10.10.4.10": "Sokolniki", "10.10.4.5": "Trofimova", "10.10.4.21": "Varshavskoe obl",
-                 "10.10.4.15": "Volgogradsky", "10.10.4.12": "Varshavskoe", "10.10.4.8": "Yaroslavskoe",
-                 "10.10.4.19": "Zvenigorodskoe", "10.10.4.17": "Volokolamka", "10.10.4.13": "Leningradsky","10.10.4.4": "Test",
+constructions = {'10.10.4.24': 'Avtozavodskaya', '10.10.4.7': 'Bryanski post',
+                 '10.10.4.11': 'Butyrski', '10.10.4.23': 'Domodedovo',
+                 '10.10.4.9': 'Entuziastov', '10.10.4.14': 'Kashirskoe',
+                 '10.10.4.6': 'Kutuzovski', '10.10.4.17': 'Leningradski A/B',
+                 '10.10.4.20': 'Mira A/B', '10.10.4.25': 'Rusakovskaya',
+                 '10.10.4.5': 'Trofimova', '10.10.4.10': 'Sokolniki',
+                 '10.10.4.12': 'Varshavskoe', '10.10.4.21': 'Varshavskoe obl',
+                 '10.10.4.15': 'Volgogradski', '10.10.4.13': 'Volokolamskaya',
+                 '10.10.4.8': 'Yaroslavskoe', '10.10.4.19': 'Zvenigorodskoe',
                  "10.10.5.230": "sftp", "bot": None, "update": list()}
 
 
@@ -77,7 +80,7 @@ def main():
     dp = updater.dispatcher
 
     # on different commands - answer in Telegram
-    dp.addTelegramCommandHandler("start", start)
+    dp.addTelegramCommandHandler("start_user", start)
     dp.addTelegramCommandHandler("help", help)
     dp.addTelegramCommandHandler("status", status)
 
