@@ -35,9 +35,12 @@ def save():
 
 
 def revoke():
-    with open('users.pickle', 'rb') as f:
-        users = pickle.load(f)
-    return users
+    try:
+        with open('users.pickle', 'rb') as f:
+            users = pickle.load(f)
+        return users
+    except:
+        return None
 
 
 # Define a few command handlers. These usually take the two arguments bot and
