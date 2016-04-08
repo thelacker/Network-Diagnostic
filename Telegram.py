@@ -100,8 +100,8 @@ def main():
     # on different commands - answer in Telegram
     dp.addTelegramCommandHandler("start_user", start_user)
     dp.addTelegramCommandHandler("help", help)
-    dp.addTelegramCommandHandler("save", help)
-    dp.addTelegramCommandHandler("revoke", help)
+    dp.addTelegramCommandHandler("save", save)
+    dp.addTelegramCommandHandler("revoke", revoke)
     dp.addTelegramCommandHandler("status", status)
 
     # on noncommand i.e message - echo the message on Telegram
