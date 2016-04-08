@@ -3,6 +3,7 @@ from telegram import Updater
 import logging
 import Diagnostic
 import pickle
+from Constructions import get_constructions
 
 # Enable logging
 logging.basicConfig(
@@ -23,10 +24,6 @@ constructions = {'10.10.4.24': 'Avtozavodskaya', '10.10.4.7': 'Bryanski post',
                  "10.10.5.230": "sftp", "bot": None, "update": list()}
 
 
-def get_constructions():
-    with open('data.pickle', 'rb') as f:
-        constructions = pickle.load(f)
-    return constructions
 
 
 def save(bot, update):

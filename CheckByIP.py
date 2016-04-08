@@ -6,7 +6,7 @@ import threading
 import time
 from Serialisation import *
 import pickle
-from Telegram import get_constructions
+from Constructions import get_constructions
 
 #Функция вызова системной функции ping
 #Обработка ошибок
