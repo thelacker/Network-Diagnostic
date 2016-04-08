@@ -29,7 +29,7 @@ def get_constructions():
     return constructions
 
 
-def save():
+def save(bot, update):
     with open('users.pickle', 'wb') as f:
         pickle.dump(get_constructions()['update'], f)
 
@@ -104,7 +104,6 @@ def main():
     dp.addTelegramCommandHandler("start_user", start_user)
     dp.addTelegramCommandHandler("help", help)
     dp.addTelegramCommandHandler("save", save)
-    dp.addTelegramCommandHandler("revoke", revoke)
     dp.addTelegramCommandHandler("status", status)
 
     # on noncommand i.e message - echo the message on Telegram
