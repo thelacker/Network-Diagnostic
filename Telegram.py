@@ -26,8 +26,18 @@ constructions = {'10.10.4.24': 'Avtozavodskaya', '10.10.4.7': 'Bryanski post',
 def get_constructions():
     with open('data.pickle', 'rb') as f:
         constructions = pickle.load(f)
-
     return constructions
+
+
+def save():
+    with open('users.pickle', 'wb') as f:
+        pickle.dump(get_constructions()['update'], f)
+
+
+def revoke():
+    with open('users.pickle', 'rb') as f:
+        users = pickle.load(f)
+    return users
 
 
 # Define a few command handlers. These usually take the two arguments bot and
@@ -78,6 +88,7 @@ def error(bot, update, error):
 
 def main():
     with open('data.pickle', 'wb') as f:
+        constructions['update'] = revoke()
         pickle.dump(constructions, f)
 
     # Create the EventHandler and pass it your bot's token.
@@ -89,6 +100,8 @@ def main():
     # on different commands - answer in Telegram
     dp.addTelegramCommandHandler("start_user", start_user)
     dp.addTelegramCommandHandler("help", help)
+    dp.addTelegramCommandHandler("save", help)
+    dp.addTelegramCommandHandler("revoke", help)
     dp.addTelegramCommandHandler("status", status)
 
     # on noncommand i.e message - echo the message on Telegram
