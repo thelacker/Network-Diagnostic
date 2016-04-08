@@ -87,7 +87,7 @@ def main():
     dp = updater.dispatcher
 
     # on different commands - answer in Telegram
-    dp.addTelegramCommandHandler("start_user", start)
+    dp.addTelegramCommandHandler("start_user", start_user)
     dp.addTelegramCommandHandler("help", help)
     dp.addTelegramCommandHandler("status", status)
 
