@@ -40,7 +40,7 @@ def revoke():
             users = pickle.load(f)
         return users
     except:
-        return None
+        return []
 
 
 # Define a few command handlers. These usually take the two arguments bot and
